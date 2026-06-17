@@ -1,0 +1,27 @@
+import os
+import git
+from app.engine.change_engine import process_file
+
+def ingest_repo(repo_url: str):
+    name = repo_url.split("/")[-1].replace(".git", "")
+    path = f"/tmp/{name}"
+
+    if not os.path.exists(path):
+        git.Repo.clone_from(repo_url, path)
+
+    modules = []
+
+    for root, _, files in os.walk(path):
+        for file in files:
+            if not file.endswith((".py", ".ts", ".js")):
+                continue
+
+            full = os.path.join(root, file)
+
+            module = process_file(full)
+            modules.append(module)
+
+    return {
+        "repo": name,
+        "modules": modules
+    }
