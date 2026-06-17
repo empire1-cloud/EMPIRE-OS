@@ -1,0 +1,50 @@
+empire-os/
+│
+├── app/
+│   ├── main.py
+│   ├── api/
+│   │   ├── router.py
+│   │   ├── routes/
+│   │   │   ├── ingest.py
+│   │   │   ├── report.py
+│   │   │   ├── drift.py
+│   │   │   ├── decisions.py
+│   │
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── llm.py
+│   │   ├── prompts.py
+│   │
+│   ├── engine/
+│   │   ├── state_engine.py
+│   │   ├── change_engine.py
+│   │   ├── drift_engine.py
+│   │   ├── rule_engine.py
+│   │   ├── reasoning_engine.py
+│   │
+│   ├── services/
+│   │   ├── github.py
+│   │   ├── repo_parser.py
+│   │   ├── embeddings.py
+│   │
+│   ├── db/
+│   │   ├── session.py
+│   │   ├── base.py
+│   │
+│   ├── models/
+│   │   ├── repo.py
+│   │   ├── module.py
+│   │   ├── change.py
+│   │   ├── decision.py
+│
+├── workers/
+│   ├── ingest_worker.py
+│   ├── drift_worker.py
+│   ├── report_worker.py
+│
+├── scripts/
+│   ├── init_db.py
+│
+├── requirements.txt
+├── .env
+└── README.md
