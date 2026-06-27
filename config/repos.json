@@ -1,0 +1,27 @@
+{
+  "parent": {
+    "name": "SLA113",
+    "repo": "https://github.com/empire1-cloud/sla113.git",
+    "role": "parent runtime and control plane"
+  },
+  "lyrica": {
+    "name": "Lyrica 3",
+    "repo": "https://github.com/empire1-cloud/Lyrica3-pro.git",
+    "role": "creator-owned AI music platform"
+  },
+  "archisynapse": {
+    "name": "Archisynapse",
+    "repo": "https://github.com/empire1-cloud/Archisynapse-.git",
+    "role": "payments, fraud, ledger, payouts"
+  },
+  "cultura": {
+    "name": "Cultura",
+    "repo": "https://github.com/empire1-cloud/the-cultura-vibe-forge-.git",
+    "role": "cultural OS, authenticity, dialect and heritage logic"
+  },
+  "empire": {
+    "name": "Empire-1",
+    "repo": "https://github.com/empire1-cloud/Empire-1.git",
+    "role": "monorepo and ecosystem surface"
+  }
+}
