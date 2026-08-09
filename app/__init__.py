@@ -1,0 +1,1 @@
+"""Empire OS application package."""
