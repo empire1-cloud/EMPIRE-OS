@@ -1,0 +1,29 @@
+name: Cofounder Smoke
+
+on:
+  push:
+    branches:
+      - main
+      - fix/cofounder-bootable-control-plane
+  pull_request:
+
+jobs:
+  boot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Import control plane and verify routes
+        run: |
+          python - <<'PY'
+          from main import app
+          paths = {route.path for route in app.routes}
+          required = {'/', '/api/health', '/api/status', '/api/ingest/repo'}
+          missing = required - paths
+          if missing:
+              raise SystemExit(f'missing routes: {sorted(missing)}')
+          print('Empire OS Cofounder boot smoke passed')
+          PY
